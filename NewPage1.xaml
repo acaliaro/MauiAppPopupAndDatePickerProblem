@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp7.NewPage1"
+             Shell.ForegroundColor="Red"
+             Shell.BackgroundColor="HotPink"
+             xmlns:viewmodel="clr-namespace:MauiApp7"
+             x:DataType="viewmodel:NewViewModel1"
+             Title="NewPage1">
+
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior IsVisible="True" />
+    </Shell.BackButtonBehavior>
+    <VerticalStackLayout>
+        <Label 
+            Text="Welcome to .NET MAUI!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Entry Text="{Binding Stringa}"/>
+        <CheckBox>
+            <CheckBox.Triggers>
+                <DataTrigger TargetType="CheckBox" Binding="{Binding IsStringaEmpty}" Value="True" >
+                    <Setter Property="Color" Value="Green"/>
+                </DataTrigger>
+                <DataTrigger TargetType="CheckBox" Binding="{Binding IsStringaEmpty}" Value="False" >
+                    <Setter Property="Color" Value="Red"/>
+                </DataTrigger>
+            </CheckBox.Triggers>
+        </CheckBox>
+
+        <Button Text="SET PIPPO" Command="{Binding SetPippoCommand}"/>
+
+    </VerticalStackLayout>
+</ContentPage>
