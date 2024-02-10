@@ -7,4 +7,9 @@ public partial class NewPage1 : ContentPage
 		InitializeComponent();
 		BindingContext = new NewViewModel1();
 	}
+
+    private void Button_Clicked(object sender, EventArgs e)
+    {
+		dp.Focus();
+    }
 }

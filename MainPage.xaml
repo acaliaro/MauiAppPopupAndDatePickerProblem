@@ -35,7 +35,12 @@
                 Clicked="OnCounterClicked"
                 HorizontalOptions="Fill" />
 
-            <Button x:Name="ShowPopup" Text="ShowPopup" Clicked="ShowPopup_Clicked"/>
+            <DatePicker IsVisible="false" x:Name="datepickerproblem"/>
+            <DatePicker Opacity="0" x:Name="datepickerok"/>
+
+            <Button x:Name="ShowDatePickerOk" Text="Show datepicker ok" Clicked="ShowDatePickerOk_Clicked"/>
+            <Button x:Name="ShowDatePickerProblem" Text="Show datepicker ok" Clicked="ShowDatePickerProblem_Clicked"/>
+
         </VerticalStackLayout>
     </ScrollView>
 

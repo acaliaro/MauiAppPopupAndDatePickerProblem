@@ -1,35 +1,45 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MauiApp7.NewPage1"
-             Shell.ForegroundColor="Red"
-             Shell.BackgroundColor="HotPink"
-             xmlns:viewmodel="clr-namespace:MauiApp7"
-             x:DataType="viewmodel:NewViewModel1"
-             Title="NewPage1">
+<ContentPage
+    x:Class="MauiApp7.NewPage1"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewmodel="clr-namespace:MauiApp7"
+    Title="NewPage1"
+    x:DataType="viewmodel:NewViewModel1"
+    Shell.BackgroundColor="HotPink"
+    Shell.ForegroundColor="Red">
 
     <Shell.BackButtonBehavior>
         <BackButtonBehavior IsVisible="True" />
     </Shell.BackButtonBehavior>
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+    <Grid RowDefinitions="*">
+        <StackLayout>
+            <Label
+                HorizontalOptions="Center"
+                Text="Welcome to .NET MAUI!"
+                VerticalOptions="Center" />
 
-        <Entry Text="{Binding Stringa}"/>
-        <CheckBox>
-            <CheckBox.Triggers>
-                <DataTrigger TargetType="CheckBox" Binding="{Binding IsStringaEmpty}" Value="True" >
-                    <Setter Property="Color" Value="Green"/>
-                </DataTrigger>
-                <DataTrigger TargetType="CheckBox" Binding="{Binding IsStringaEmpty}" Value="False" >
-                    <Setter Property="Color" Value="Red"/>
-                </DataTrigger>
-            </CheckBox.Triggers>
-        </CheckBox>
+            <Entry Text="{Binding Stringa}" />
+            <CheckBox>
+                <CheckBox.Triggers>
+                    <DataTrigger
+                        Binding="{Binding IsStringaEmpty}"
+                        TargetType="CheckBox"
+                        Value="True">
+                        <Setter Property="Color" Value="Green" />
+                    </DataTrigger>
+                    <DataTrigger
+                        Binding="{Binding IsStringaEmpty}"
+                        TargetType="CheckBox"
+                        Value="False">
+                        <Setter Property="Color" Value="Red" />
+                    </DataTrigger>
+                </CheckBox.Triggers>
+            </CheckBox>
 
-        <Button Text="SET PIPPO" Command="{Binding SetPippoCommand}"/>
+            <Button Clicked="Button_Clicked" Text="SET PIPPO" />
 
-    </VerticalStackLayout>
+            <DatePicker  x:Name="dp" Opacity="0" />
+        </StackLayout>
+    </Grid>
 </ContentPage>

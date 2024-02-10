@@ -16,11 +16,14 @@ namespace MauiApp7
             await Shell.Current.GoToAsync(nameof(NewPage1));
         }
 
-        private async void ShowPopup_Clicked(object sender, EventArgs e)
+        private void ShowDatePickerOk_Clicked(object sender, EventArgs e)
         {
-            var popup = new MyPopupView();
+            datepickerok.Focus();
+        }
 
-            await this.ShowPopupAsync(popup);
+        private void ShowDatePickerProblem_Clicked(object sender, EventArgs e)
+        {
+            datepickerproblem.Focus();
         }
     }
 
