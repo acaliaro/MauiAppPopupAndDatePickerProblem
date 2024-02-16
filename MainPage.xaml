@@ -1,45 +1,58 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MauiApp7.MainPage">
+<ContentPage
+    x:Class="MauiApp7.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
     <ScrollView>
-        <VerticalStackLayout
-            Padding="30,0"
-            Spacing="25">
+        <VerticalStackLayout Padding="30,0" Spacing="25">
             <Image
-                Source="dotnet_bot.png"
-                HeightRequest="185"
                 Aspect="AspectFit"
-                SemanticProperties.Description="dot net bot in a race car number eight" />
+                HeightRequest="185"
+                SemanticProperties.Description="dot net bot in a race car number eight"
+                Source="dotnet_bot.png" />
 
             <Border>
-                <Entry></Entry>
+                <Entry />
             </Border>
 
             <Label
-                Text="Hello, World!"
+                SemanticProperties.HeadingLevel="Level1"
                 Style="{StaticResource Headline}"
-                SemanticProperties.HeadingLevel="Level1" />
+                Text="Hello, World!" />
 
             <Label
-                Text="Welcome to &#10;.NET Multi-platform App UI"
-                Style="{StaticResource SubHeadline}"
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
                 SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
+                Style="{StaticResource SubHeadline}"
+                Text="Welcome to &#10;.NET Multi-platform App UI" />
 
             <Button
                 x:Name="CounterBtn"
-                Text="Click me" 
+                HorizontalOptions="Fill"
+                SemanticProperties.Hint="sdad"
+                Style="{StaticResource labelButton}"
+                Text="text color wrong"
+                TextColor="{StaticResource MyValueDanger}" />
+
+            <Button
+                x:Name="CounterBtn1"
+                HorizontalOptions="Fill"
                 SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Fill" />
+                Text="text color right"
+                TextColor="{StaticResource MyValueDanger}" />
 
-            <DatePicker IsVisible="false" x:Name="datepickerproblem"/>
-            <DatePicker Opacity="0" x:Name="datepickerok"/>
+            <DatePicker x:Name="datepickerproblem" IsVisible="false" />
+            <DatePicker x:Name="datepickerok" Opacity="0" />
 
-            <Button x:Name="ShowDatePickerOk" Text="Show datepicker ok" Clicked="ShowDatePickerOk_Clicked"/>
-            <Button x:Name="ShowDatePickerProblem" Text="Show datepicker ok" Clicked="ShowDatePickerProblem_Clicked"/>
+            <Button
+                x:Name="ShowDatePickerOk"
+                Clicked="ShowDatePickerOk_Clicked"
+                Text="Show datepicker ok" />
+            <Button
+                x:Name="ShowDatePickerProblem"
+                Clicked="ShowDatePickerProblem_Clicked"
+                Text="Show datepicker problem" />
 
         </VerticalStackLayout>
     </ScrollView>

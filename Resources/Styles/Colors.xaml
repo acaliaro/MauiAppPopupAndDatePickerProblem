@@ -6,6 +6,18 @@
 
     <!-- Note: For Android please see also Platforms\Android\Resources\values\colors.xml -->
 
+    <Color x:Key="MyValueDarkBLue">#000e4e</Color>
+    <Color x:Key="MyValueBlue">#FF223AA3</Color>
+    <Color x:Key="MyValueLightBlue">#d3d8ed</Color>
+    <Color x:Key="MyValueYellow">#F2B200</Color>
+    <Color x:Key="MyValueSuccess">#00785C</Color>
+    <Color x:Key="MyValueDanger">#EE6C4D</Color>
+    <Color x:Key="MyValueWhite">#fff</Color>
+    <Color x:Key="MyValueGray">#6E7375</Color>
+    <Color x:Key="MyValueTransparent">Transparent</Color>
+    <Color x:Key="MyValueBlack">#000000</Color>
+    <Color x:Key="MyValueLightGray">#e0e1e2</Color>
+
     <Color x:Key="Primary">#512BD4</Color>
     <Color x:Key="PrimaryDark">#ac99ea</Color>
     <Color x:Key="PrimaryDarkText">#242424</Color>
